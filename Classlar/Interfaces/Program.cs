@@ -10,6 +10,10 @@ namespace Interfaces
     {
         static void Main(string[] args)
         {
+            PersonManager manager = new PersonManager();
+            manager.Add(new Customer { Id = 1, FirstName = "Bahadır", LastName = "Meriç", Address = "Küçükçekmece" });
+            Console.ReadKey();
+
         }
 
         interface IPerson
@@ -35,6 +39,13 @@ namespace Interfaces
             public string LastName { get; set; }
 
             public string Departman { get; set; }
+        }
+        class PersonManager
+        {
+            public void Add(Customer customer)
+            {
+                Console.WriteLine(customer.FirstName);
+            }
         }
     }
 }
