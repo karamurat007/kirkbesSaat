@@ -12,6 +12,17 @@ namespace Interfaces
         {
             //InterfaceIntro();
             //InterfaceGercek1();
+            ICustomerDal[] customerDals = new ICustomerDal[2] 
+            { 
+                new SqlServerCustomerDal(), 
+                new OracleServerCustomerDal()
+            };
+
+            foreach (var custom in customerDals)
+            {
+                custom.Add();
+            }
+            Console.ReadKey();
         }
 
         private static void InterfaceGercek1()
