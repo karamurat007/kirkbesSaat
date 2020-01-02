@@ -10,7 +10,12 @@ namespace Interfaces
     {
         static void Main(string[] args)
         {
-            InterfaceIntro();
+            //InterfaceIntro();
+            CustomerManager customM = new CustomerManager();
+            customM.Add(new SqlServerCustomerDal());
+            Console.ReadKey();
+            customM.Add(new OracleServerCustomerDal());
+            Console.ReadKey();
         }
 
         private static void InterfaceIntro()
@@ -39,6 +44,15 @@ namespace Interfaces
         }
 
         class Student:IPerson
+        {
+            public int Id { get; set; }
+            public string FirstName { get; set; }
+            public string LastName { get; set; }
+
+            public string Departman { get; set; }
+        }
+
+        class Worker : IPerson
         {
             public int Id { get; set; }
             public string FirstName { get; set; }
