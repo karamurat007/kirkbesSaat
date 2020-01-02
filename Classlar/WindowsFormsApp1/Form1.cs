@@ -19,6 +19,11 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            DamaTahtasi();
+        }
+
+        private void DamaTahtasi()
+        {
             Button[,] buttons = new Button[8, 8];
             int top = 0;
             int left = 0;
@@ -31,6 +36,14 @@ namespace WindowsFormsApp1
                     buttons[i, j].Height = 50;
                     buttons[i, j].Left = left;
                     buttons[i, j].Top = top;
+                    if ((i + j) % 2 == 0)
+                    {
+                        buttons[i, j].BackColor = Color.Black;
+                    }
+                    else
+                    {
+                        buttons[i, j].BackColor = Color.White;
+                    }
                     this.Controls.Add(buttons[i, j]);
                     left += 50;
                 }
