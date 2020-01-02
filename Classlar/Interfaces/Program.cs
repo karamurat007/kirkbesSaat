@@ -10,6 +10,11 @@ namespace Interfaces
     {
         static void Main(string[] args)
         {
+            InterfaceIntro();
+        }
+
+        private static void InterfaceIntro()
+        {
             PersonManager manager = new PersonManager();
             manager.Add(new Customer { Id = 1, FirstName = "Bahadır", LastName = "Meriç", Address = "Küçükçekmece" });
             Console.ReadKey();
