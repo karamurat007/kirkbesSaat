@@ -11,6 +11,11 @@ namespace Interfaces
         static void Main(string[] args)
         {
             //InterfaceIntro();
+            //InterfaceGercek1();
+        }
+
+        private static void InterfaceGercek1()
+        {
             CustomerManager customM = new CustomerManager();
             customM.Add(new SqlServerCustomerDal());
             Console.ReadKey();
