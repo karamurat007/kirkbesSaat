@@ -13,7 +13,8 @@ namespace Interfaces
             PersonManager manager = new PersonManager();
             manager.Add(new Customer { Id = 1, FirstName = "Bahadır", LastName = "Meriç", Address = "Küçükçekmece" });
             Console.ReadKey();
-
+            manager.Add(new Student { Id = 1, FirstName = "Kemal", LastName = "Kara", Departman = "Yazılım" });
+            Console.ReadKey();
         }
 
         interface IPerson
@@ -42,9 +43,9 @@ namespace Interfaces
         }
         class PersonManager
         {
-            public void Add(Customer customer)
+            public void Add(IPerson person)
             {
-                Console.WriteLine(customer.FirstName);
+                Console.WriteLine(person.FirstName);
             }
         }
     }
